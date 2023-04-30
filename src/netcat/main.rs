@@ -1,10 +1,29 @@
+use std::io::stdin;
 use std::net::SocketAddr;
 
 use anyhow::Result;
 
 use command_line_rust::netcat::*;
-use tokio::io::AsyncReadExt;
-use tokio::net::{TcpListener, UdpSocket};
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
+use tokio::net::{TcpListener, TcpStream, UdpSocket};
+
+async fn tcp_client(ip_addr: SocketAddr) -> Result<()> {
+    let mut stream = TcpStream::connect(ip_addr).await?;
+    loop {
+        let mut buffer = String::new();
+        stdin().read_line(&mut buffer)?;
+        stream.write_all(buffer.as_bytes()).await?;
+    }
+}
+
+async fn udp_client(ip_addr: SocketAddr) -> Result<()> {
+    let stream = UdpSocket::bind(ip_addr).await?;
+    loop {
+        let mut buffer = String::new();
+        stdin().read_line(&mut buffer)?;
+        stream.send(buffer.as_bytes()).await?;
+    }
+}
 
 async fn udp_server(ip_addr: SocketAddr) -> Result<()> {
     let socket = UdpSocket::bind(ip_addr).await?;
@@ -58,7 +77,12 @@ async fn main() -> Result<()> {
         (ip_addr, true, Protocol::Udp) => {
             udp_server(ip_addr).await?;
         }
-        (_, _, _) => todo!(),
+        (ip_addr, false, Protocol::Tcp) => {
+            tcp_client(ip_addr).await?;
+        }
+        (ip_addr, false, Protocol::Udp) => {
+            udp_client(ip_addr).await?;
+        }
     }
 
     Ok(())
