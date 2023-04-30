@@ -1,10 +1,59 @@
-[workspace]
+[package]
+name = "command-line-rust"
+version = "0.1.0"
+edition = "2021"
+authors = ["Takashi Idobe <mail@takashiidobe.com>"]
+default-run = "netcat"
 
-members = [
-  "catr",
-  "echor",
-  "headr",
-  "hello",
-  "wcr"
-]
+[[bin]]
+name = "head"
+path = "src/head/main.rs"
 
+[[bin]]
+name = "hello"
+path = "src/hello/main.rs"
+
+[[bin]]
+name = "false"
+path = "src/false/main.rs"
+
+[[bin]]
+name = "true"
+path = "src/true/main.rs"
+
+[[bin]]
+name = "echo"
+path = "src/echo/main.rs"
+
+[[bin]]
+name = "wc"
+path = "src/wc/main.rs"
+
+[[bin]]
+name = "cat"
+path = "src/cat/main.rs"
+
+[[bin]]
+name = "strace"
+path = "src/strace/main.rs"
+
+[[bin]]
+name = "netcat"
+path = "src/netcat/main.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.71"
+byteorder = "1.4.3"
+clap = { version = "3", features = ["derive"] }
+libc = "0.2.142"
+nix = "0.26.2"
+num_enum = "0.6.1"
+owo-colors = "3.5.0"
+tokio = { version = "1.28.0", features = ["full"] }
+
+[dev-dependencies]
+assert_cmd = "2"
+predicates = "2"
+rand = "0.8"

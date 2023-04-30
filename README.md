@@ -1,23 +1,23 @@
 # Command Line Rust
 
-My Code following <https://github.com/kyclark/command-line-rust>.
+My code following <https://github.com/kyclark/command-line-rust>.
 
 ## Chapters Done
 
-1. Hello
-2. echor
-3. catr
-4. headr
+1. hello
+2. echo
+3. cat
+4. head
 
 ## In Progress
 
-5. wcr
-6. uniqr
-7. findr
+5. wc
+6. uniq
+7. find
 8. cut
-9. grepr
-10. commr
-11. tailr
+9. grep
+10. comm
+11. tail
 12. fortune
-13. calr
-14. lsr
+13. cal
+14. ls
