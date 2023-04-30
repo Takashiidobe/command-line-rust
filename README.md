@@ -21,3 +21,8 @@ My code following <https://github.com/kyclark/command-line-rust>.
 12. fortune
 13. cal
 14. ls
+
+## Extras
+
+15. strace
+16. netcat
