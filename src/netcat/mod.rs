@@ -1,8 +1,5 @@
-use anyhow::Error;
-use std::net::{IpAddr, Ipv4Addr, Ipv6Addr, SocketAddr, SocketAddrV4, SocketAddrV6};
-use std::str::FromStr;
+use std::net::{Ipv4Addr, SocketAddr};
 
-use anyhow::Result;
 use clap::{App, Arg};
 
 #[derive(Debug, Clone, Eq, PartialEq, PartialOrd, Ord, Default)]

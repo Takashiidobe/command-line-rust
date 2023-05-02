@@ -4,25 +4,52 @@ My code following <https://github.com/kyclark/command-line-rust>.
 
 ## Chapters Done
 
-1. hello
-2. echo
-3. cat
-4. head
+- hello
+- echo
+- cat
+- head
 
 ## In Progress
 
-5. wc
-6. uniq
-7. find
-8. cut
-9. grep
-10. comm
-11. tail
-12. fortune
-13. cal
-14. ls
+- wc
+- uniq
+- find
+- cut
+- grep
+- comm
+- tail
+- fortune
+- cal
+- ls
 
 ## Extras
 
-15. strace
-16. netcat
+- strace
+- netcat
+- tree
+
+## Possible Ideas
+
+- diff
+- ping
+- netstat
+- top
+- nmap
+- rsync
+- vmstat
+- ps
+- free
+- sar
+- iostat
+- pmap
+- ss
+- iptraf
+- tcpdump
+- lsof
+- pstree
+- du/df
+- traceroute
+- mtr
+- nslookup
+- dig
+- host

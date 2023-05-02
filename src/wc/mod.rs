@@ -21,7 +21,6 @@ pub fn run(config: Config) -> MyResult<()> {
 
 pub fn get_args() -> MyResult<Config> {
     let config = Config::default();
-    println!("{:?}", config);
     Ok(Config::default())
 }
 

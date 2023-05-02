@@ -4,3 +4,4 @@ pub mod head;
 pub mod strace;
 pub mod wc;
 pub mod netcat;
+pub mod tree;
