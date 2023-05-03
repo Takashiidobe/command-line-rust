@@ -27,6 +27,7 @@ My code following <https://github.com/kyclark/command-line-rust>.
 - strace
 - netcat
 - tree
+- host
 
 ## Possible Ideas
 
@@ -52,4 +53,3 @@ My code following <https://github.com/kyclark/command-line-rust>.
 - mtr
 - nslookup
 - dig
-- host

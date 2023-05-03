@@ -3,7 +3,7 @@ name = "command-line-rust"
 version = "0.1.0"
 edition = "2021"
 authors = ["Takashi Idobe <mail@takashiidobe.com>"]
-default-run = "netcat"
+default-run = "host"
 
 [[bin]]
 name = "head"
@@ -45,6 +45,10 @@ path = "src/netcat/main.rs"
 name = "tree"
 path = "src/tree/main.rs"
 
+[[bin]]
+name = "host"
+path = "src/host/main.rs"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
@@ -57,6 +61,7 @@ nix = "0.26.2"
 num_enum = "0.6.1"
 owo-colors = "3.5.0"
 tokio = { version = "1.28.0", features = ["full"] }
+trust-dns-resolver = { version = "0.22.0", features = ["dns-over-rustls"] }
 walkdir = "2.3.3"
 
 [dev-dependencies]
