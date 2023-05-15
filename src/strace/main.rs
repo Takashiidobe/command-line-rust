@@ -1,12 +1,17 @@
-use anyhow::Result;
-use command_line_rust::strace::SystemCall;
-use nix::{
-    sys::{ptrace, wait::waitpid},
-    unistd::Pid,
+#[cfg(all(target_os = "linux", target_arch = "x86_64"))]
+use 
+{ 
+    anyhow::Result,
+    command_line_rust::strace::SystemCall,
+    nix::{
+        sys::{ptrace, wait::waitpid},
+        unistd::Pid,
+    },
+    owo_colors::OwoColorize,
+    std::{os::unix::process::CommandExt, process::Command}
 };
-use owo_colors::OwoColorize;
-use std::{os::unix::process::CommandExt, process::Command};
 
+#[cfg(all(target_os = "linux", target_arch = "x86_64"))]
 fn main() -> Result<()> {
     let arguments: Vec<_> = std::env::args().collect();
     let first_arg = &arguments[1];
@@ -39,4 +44,9 @@ fn main() -> Result<()> {
         }
         is_sys_exit = !is_sys_exit;
     }
+}
+
+#[cfg(not(all(target_os = "linux", target_arch = "x86_64")))]
+fn main() {
+    compile_error!("Not a supported platform");
 }

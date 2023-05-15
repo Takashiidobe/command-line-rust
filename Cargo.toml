@@ -55,7 +55,7 @@ path = "src/host/main.rs"
 anyhow = "1.0.71"
 byteorder = "1.4.3"
 clap = { version = "3", features = ["derive"] }
-dns-lookup = "2.0.0"
+dns-lookup = "2.0.2"
 libc = "0.2.142"
 nix = "0.26.2"
 num_enum = "0.6.1"
