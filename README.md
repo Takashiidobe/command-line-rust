@@ -24,7 +24,7 @@ My code following <https://github.com/kyclark/command-line-rust>.
 
 ## Extras
 
-- strace
+- strace (only works on x86_64 linux)
 - netcat
 - tree
 - host
