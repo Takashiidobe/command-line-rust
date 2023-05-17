@@ -6,3 +6,5 @@ pub mod netcat;
 pub mod strace;
 pub mod tree;
 pub mod wc;
+pub mod readelf;
+pub mod ldd;

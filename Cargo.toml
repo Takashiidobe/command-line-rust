@@ -49,6 +49,14 @@ path = "src/tree/main.rs"
 name = "host"
 path = "src/host/main.rs"
 
+[[bin]]
+name = "readelf"
+path = "src/readelf/main.rs"
+
+[[bin]]
+name = "ldd"
+path = "src/ldd/main.rs"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
@@ -56,11 +64,12 @@ anyhow = "1.0.71"
 byteorder = "1.4.3"
 clap = { version = "3", features = ["derive"] }
 dns-lookup = "2.0.2"
+goblin = "0.6.1"
 libc = "0.2.142"
 nix = "0.26.2"
 num_enum = "0.6.1"
 owo-colors = "3.5.0"
-tokio = { version = "1.28.0", features = ["full"] }
+tokio = { version = "1.28.1", features = ["full"] }
 trust-dns-resolver = { version = "0.22.0", features = ["dns-over-rustls"] }
 walkdir = "2.3.3"
 
