@@ -1,10 +1,12 @@
 pub mod cat;
+pub mod diff;
 pub mod echo;
 pub mod head;
 pub mod host;
+pub mod ldd;
 pub mod netcat;
+pub mod readelf;
 pub mod strace;
+pub mod tcpdump;
 pub mod tree;
 pub mod wc;
-pub mod readelf;
-pub mod ldd;

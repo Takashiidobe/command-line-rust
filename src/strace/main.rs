@@ -1,6 +1,8 @@
+#[cfg(not(all(target_os = "linux", target_arch = "x86_64")))]
+compile_error!("Not a supported platform");
+
 #[cfg(all(target_os = "linux", target_arch = "x86_64"))]
-use 
-{ 
+use {
     anyhow::Result,
     command_line_rust::strace::SystemCall,
     nix::{
@@ -8,7 +10,7 @@ use
         unistd::Pid,
     },
     owo_colors::OwoColorize,
-    std::{os::unix::process::CommandExt, process::Command}
+    std::{os::unix::process::CommandExt, process::Command},
 };
 
 #[cfg(all(target_os = "linux", target_arch = "x86_64"))]
@@ -44,9 +46,4 @@ fn main() -> Result<()> {
         }
         is_sys_exit = !is_sys_exit;
     }
-}
-
-#[cfg(not(all(target_os = "linux", target_arch = "x86_64")))]
-fn main() {
-    compile_error!("Not a supported platform");
 }

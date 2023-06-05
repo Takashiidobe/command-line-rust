@@ -28,10 +28,12 @@ My code following <https://github.com/kyclark/command-line-rust>.
 - netcat
 - tree
 - host
+- ldd
+- readelf
+- diff
 
 ## Possible Ideas
 
-- diff
 - ping
 - netstat
 - top
